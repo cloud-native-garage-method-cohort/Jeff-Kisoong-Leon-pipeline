@@ -1,0 +1,11 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  generateName: jeff-tan-pipeline-from-scratch-pipeline-run-
+spec:
+  pipelineRef:
+    name: jeff-tan-pipeline-from-scratch-pipeline
+  workspaces:
+    - name: shared-workspace
+      persistentVolumeClaim:
+        claimName: jeff-tan-live-pvc
